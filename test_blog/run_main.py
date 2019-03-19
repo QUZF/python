@@ -90,12 +90,14 @@ def send_mail(sender, psw, receiver, smtp_server, report_file):
 
 if __name__ == '__main__':
     """测试用例的路径、匹配规则"""
-    case_path = "C:\\pycharm_workspace\\test_blog\\test_case"
+    # case_path = "C:\\pycharm_workspace\\test_blog\\test_case"
+    case_path = os.path.join(os.getcwd(), "test_case")
     rule = "test*.py"
     all_case = add_case(case_path, rule)     # 1.加载用例
     # 生成测试报告的路径
     time.sleep(2)
-    report_path = "C:\\pycharm_workspace\\test_blog\\test_report"
+    # report_path = "C:\\pycharm_workspace\\test_blog\\test_report"
+    report_path = os.path.join(os.getcwd(), "test_report")
     run_case(all_case, report_path)       # 2.执行用例
     # 获取最新的测试报告文件
     time.sleep(2)
